@@ -1,0 +1,628 @@
+[2025-05-09T08:57:00.326Z] [INFO] Starting verification process...
+[2025-05-09T08:57:00.331Z] [INFO] Loaded 37 attribute mappings
+[2025-05-09T08:57:00.331Z] [INFO] Loaded 4 category mappings
+[2025-05-09T08:57:00.331Z] [INFO] 
+Verifying database: ZW_MN_140_kjanavi
+[2025-05-09T08:57:00.332Z] [INFO] Step 1: Connecting to database...
+[2025-05-09T08:57:00.910Z] [INFO] Step 2: Verifying attribute columns...
+[2025-05-09T08:57:00.911Z] [INFO] Getting columns from both flat tables...
+[2025-05-09T08:57:01.488Z] [INFO] Found 10333 columns in old table and 3614 columns in new table
+[2025-05-09T08:57:01.488Z] [INFO] Verifying attribute mappings...
+[2025-05-09T08:57:01.488Z] [INFO] Skipping ignored column: brand_name
+[2025-05-09T08:57:01.489Z] [INFO] Skipping ignored column: department_name
+[2025-05-09T08:57:01.490Z] [WARNING] Column a_udfdate05 missing in old table
+[2025-05-09T08:57:01.490Z] [INFO] Found 34 valid attribute mappings
+[2025-05-09T08:57:01.490Z] [INFO] Step 3: Verifying category columns...
+[2025-05-09T08:57:01.490Z] [INFO] Getting columns from both flat tables...
+[2025-05-09T08:57:01.867Z] [INFO] Found 10333 columns in old table and 3614 columns in new table
+[2025-05-09T08:57:01.868Z] [INFO] Verifying attribute mappings...
+[2025-05-09T08:57:01.868Z] [INFO] Found 4 valid category mappings
+[2025-05-09T08:57:01.868Z] [INFO] Step 4: Verifying common columns...
+[2025-05-09T08:57:01.869Z] [INFO] Getting columns from both flat tables...
+[2025-05-09T08:57:02.255Z] [INFO] Found 10333 columns in old table and 3614 columns in new table
+[2025-05-09T08:57:02.256Z] [INFO] Checking availability of common columns...
+[2025-05-09T08:57:02.256Z] [INFO] Found common column: name
+[2025-05-09T08:57:02.256Z] [INFO] Found common column: short_description
+[2025-05-09T08:57:02.256Z] [INFO] Found common column: long_description
+[2025-05-09T08:57:02.256Z] [INFO] Found common column: purchase_uom_name
+[2025-05-09T08:57:02.256Z] [INFO] Found common column: selling_uom_name
+[2025-05-09T08:57:02.257Z] [INFO] Found common column: uom_factor
+[2025-05-09T08:57:02.257Z] [INFO] Found common column: tax_type
+[2025-05-09T08:57:02.257Z] [INFO] Found common column: is_active
+[2025-05-09T08:57:02.257Z] [INFO] Found common column: ref_item_code
+[2025-05-09T08:57:02.257Z] [INFO] Found common column: sku_code
+[2025-05-09T08:57:02.257Z] [INFO] Found common column: ref_sku_code
+[2025-05-09T08:57:02.257Z] [INFO] Skipping ignored common column: sku
+[2025-05-09T08:57:02.257Z] [INFO] Found common column: purchase_uom_id
+[2025-05-09T08:57:02.257Z] [INFO] Found common column: purchase_uom_type
+[2025-05-09T08:57:02.257Z] [INFO] Found common column: selling_uom_id
+[2025-05-09T08:57:02.257Z] [INFO] Found common column: selling_uom_name
+[2025-05-09T08:57:02.257Z] [INFO] Found common column: selling_uom_type
+[2025-05-09T08:57:02.257Z] [INFO] Found 16 common columns to compare
+[2025-05-09T08:57:02.257Z] [WARNING] 
+Missing attribute columns detected:
+[2025-05-09T08:57:02.257Z] [WARNING] 
+Columns missing in old table (vendor_sku_flat_table):
+[
+  {
+    "mapping": "a37 -> a_udfdate05",
+    "missingColumn": "a_udfdate05"
+  }
+]
+[2025-05-09T08:57:02.260Z] [INFO] Step 5: Verifying SKU code matches...
+[2025-05-09T08:57:02.428Z] [INFO] Found 0 SKUs missing in new table and 0 SKUs missing in old table
+[2025-05-09T08:57:02.428Z] [SUCCESS] ✓ All SKU codes match between old and new tables
+[2025-05-09T08:57:02.429Z] [INFO] Step 6: Comparing attribute values...
+[2025-05-09T08:57:02.429Z] [INFO] Comparing 34 attribute mappings...
+[2025-05-09T08:57:02.430Z] [INFO] Comparing attribute mapping: a_category1_name -> a3
+[2025-05-09T08:57:02.539Z] [INFO] Found 1 mismatches for a_category1_name -> a3
+[2025-05-09T08:57:02.539Z] [INFO] Comparing attribute mapping: a_category2_name -> a4
+[2025-05-09T08:57:02.782Z] [INFO] Comparing attribute mapping: a_category3_name -> a5
+[2025-05-09T08:57:02.894Z] [INFO] Comparing attribute mapping: a_category4_name -> a6
+[2025-05-09T08:57:03.010Z] [INFO] Comparing attribute mapping: a_category5_name -> a7
+[2025-05-09T08:57:03.124Z] [INFO] Comparing attribute mapping: a_category6_name -> a8
+[2025-05-09T08:57:04.348Z] [INFO] Comparing attribute mapping: a_description1 -> a9
+[2025-05-09T08:57:04.480Z] [INFO] Comparing attribute mapping: a_description2 -> a10
+[2025-05-09T08:57:04.602Z] [INFO] Comparing attribute mapping: a_description3 -> a11
+[2025-05-09T08:57:04.895Z] [INFO] Comparing attribute mapping: a_description4 -> a12
+[2025-05-09T08:57:05.019Z] [INFO] Comparing attribute mapping: a_description5 -> a13
+[2025-05-09T08:57:05.153Z] [INFO] Comparing attribute mapping: a_description6 -> a14
+[2025-05-09T08:57:05.414Z] [INFO] Comparing attribute mapping: a_number1 -> a15
+[2025-05-09T08:57:05.537Z] [INFO] Comparing attribute mapping: a_number2 -> a16
+[2025-05-09T08:57:05.600Z] [WARNING] Error comparing a_number2 -> a16: Unknown column 'o.a_number2' in 'field list'
+[2025-05-09T08:57:05.600Z] [INFO] Comparing attribute mapping: a_number3 -> a17
+[2025-05-09T08:57:05.720Z] [INFO] Comparing attribute mapping: a_udfstring01 -> a18
+[2025-05-09T08:57:05.934Z] [INFO] Comparing attribute mapping: a_udfstring02 -> a19
+[2025-05-09T08:57:06.001Z] [WARNING] Error comparing a_udfstring02 -> a19: Unknown column 'o.a_udfstring02' in 'field list'
+[2025-05-09T08:57:06.001Z] [INFO] Comparing attribute mapping: a_udfstring03 -> a20
+[2025-05-09T08:57:06.078Z] [WARNING] Error comparing a_udfstring03 -> a20: Unknown column 'o.a_udfstring03' in 'field list'
+[2025-05-09T08:57:06.079Z] [INFO] Comparing attribute mapping: a_udfstring04 -> a21
+[2025-05-09T08:57:06.141Z] [WARNING] Error comparing a_udfstring04 -> a21: Unknown column 'o.a_udfstring04' in 'field list'
+[2025-05-09T08:57:06.141Z] [INFO] Comparing attribute mapping: a_udfstring05 -> a22
+[2025-05-09T08:57:06.210Z] [WARNING] Error comparing a_udfstring05 -> a22: Unknown column 'o.a_udfstring05' in 'field list'
+[2025-05-09T08:57:06.210Z] [INFO] Comparing attribute mapping: a_udfstring06 -> a23
+[2025-05-09T08:57:06.277Z] [WARNING] Error comparing a_udfstring06 -> a23: Unknown column 'o.a_udfstring06' in 'field list'
+[2025-05-09T08:57:06.277Z] [INFO] Comparing attribute mapping: a_udfstring07 -> a24
+[2025-05-09T08:57:06.473Z] [WARNING] Error comparing a_udfstring07 -> a24: Unknown column 'o.a_udfstring07' in 'field list'
+[2025-05-09T08:57:06.473Z] [INFO] Comparing attribute mapping: a_udfstring08 -> a25
+[2025-05-09T08:57:06.537Z] [WARNING] Error comparing a_udfstring08 -> a25: Unknown column 'o.a_udfstring08' in 'field list'
+[2025-05-09T08:57:06.537Z] [INFO] Comparing attribute mapping: a_udfstring09 -> a26
+[2025-05-09T08:57:06.602Z] [WARNING] Error comparing a_udfstring09 -> a26: Unknown column 'o.a_udfstring09' in 'field list'
+[2025-05-09T08:57:06.602Z] [INFO] Comparing attribute mapping: a_udfstring10 -> a27
+[2025-05-09T08:57:06.669Z] [WARNING] Error comparing a_udfstring10 -> a27: Unknown column 'o.a_udfstring10' in 'field list'
+[2025-05-09T08:57:06.669Z] [INFO] Comparing attribute mapping: a_udfnum01 -> a28
+[2025-05-09T08:57:06.739Z] [WARNING] Error comparing a_udfnum01 -> a28: Unknown column 'o.a_udfnum01' in 'field list'
+[2025-05-09T08:57:06.739Z] [INFO] Comparing attribute mapping: a_udfnum02 -> a29
+[2025-05-09T08:57:06.792Z] [WARNING] Error comparing a_udfnum02 -> a29: Unknown column 'o.a_udfnum02' in 'field list'
+[2025-05-09T08:57:06.792Z] [INFO] Comparing attribute mapping: a_udfnum03 -> a30
+[2025-05-09T08:57:06.982Z] [WARNING] Error comparing a_udfnum03 -> a30: Unknown column 'o.a_udfnum03' in 'field list'
+[2025-05-09T08:57:06.982Z] [INFO] Comparing attribute mapping: a_udfnum04 -> a31
+[2025-05-09T08:57:07.044Z] [WARNING] Error comparing a_udfnum04 -> a31: Unknown column 'o.a_udfnum04' in 'field list'
+[2025-05-09T08:57:07.044Z] [INFO] Comparing attribute mapping: a_udfnum05 -> a32
+[2025-05-09T08:57:07.120Z] [WARNING] Error comparing a_udfnum05 -> a32: Unknown column 'o.a_udfnum05' in 'field list'
+[2025-05-09T08:57:07.120Z] [INFO] Comparing attribute mapping: a_udfdate01 -> a33
+[2025-05-09T08:57:07.191Z] [WARNING] Error comparing a_udfdate01 -> a33: Unknown column 'o.a_udfdate01' in 'field list'
+[2025-05-09T08:57:07.191Z] [INFO] Comparing attribute mapping: a_udfdate02 -> a34
+[2025-05-09T08:57:07.265Z] [WARNING] Error comparing a_udfdate02 -> a34: Unknown column 'o.a_udfdate02' in 'field list'
+[2025-05-09T08:57:07.265Z] [INFO] Comparing attribute mapping: a_udfdate03 -> a35
+[2025-05-09T08:57:07.339Z] [WARNING] Error comparing a_udfdate03 -> a35: Unknown column 'o.a_udfdate03' in 'field list'
+[2025-05-09T08:57:07.340Z] [INFO] Comparing attribute mapping: a_udfdate04 -> a36
+[2025-05-09T08:57:07.556Z] [WARNING] Error comparing a_udfdate04 -> a36: Unknown column 'o.a_udfdate04' in 'field list'
+[2025-05-09T08:57:07.557Z] [INFO] Found 1 attribute mismatches
+[2025-05-09T08:57:07.557Z] [INFO] Step 7: Comparing category values...
+[2025-05-09T08:57:07.557Z] [INFO] Comparing 4 category mappings...
+[2025-05-09T08:57:07.558Z] [INFO] Comparing category mapping: cat_name_1 -> category_name1
+[2025-05-09T08:57:07.684Z] [INFO] Comparing category mapping: cat_name_2 -> category_name2
+[2025-05-09T08:57:07.844Z] [INFO] Comparing category mapping: cat_name_3 -> category_name3
+[2025-05-09T08:57:09.069Z] [INFO] Found 19 mismatches for category cat_name_3 -> category_name3
+[2025-05-09T08:57:09.069Z] [INFO] Comparing category mapping: cat_name_4 -> category_name4
+[2025-05-09T08:57:09.213Z] [INFO] Found 1 category mismatches
+[2025-05-09T08:57:09.213Z] [INFO] Step 8: Comparing common columns...
+[2025-05-09T08:57:09.214Z] [INFO] Comparing 16 common columns...
+[2025-05-09T08:57:09.214Z] [INFO] Comparing common column: name
+[2025-05-09T08:57:09.318Z] [INFO] Found 2 mismatches for column name
+[2025-05-09T08:57:09.319Z] [INFO] Comparing common column: short_description
+[2025-05-09T08:57:09.429Z] [INFO] Comparing common column: long_description
+[2025-05-09T08:57:09.605Z] [INFO] Comparing common column: purchase_uom_name
+[2025-05-09T08:57:09.715Z] [INFO] Comparing common column: selling_uom_name
+[2025-05-09T08:57:09.835Z] [INFO] Comparing common column: uom_factor
+[2025-05-09T08:57:09.949Z] [INFO] Comparing common column: tax_type
+[2025-05-09T08:57:11.171Z] [INFO] Comparing common column: is_active
+[2025-05-09T08:57:11.288Z] [INFO] Comparing common column: ref_item_code
+[2025-05-09T08:57:11.400Z] [INFO] Comparing common column: sku_code
+[2025-05-09T08:57:11.492Z] [INFO] Comparing common column: ref_sku_code
+[2025-05-09T08:57:11.704Z] [INFO] Comparing common column: purchase_uom_id
+[2025-05-09T08:57:11.820Z] [INFO] Comparing common column: purchase_uom_type
+[2025-05-09T08:57:11.928Z] [INFO] Comparing common column: selling_uom_id
+[2025-05-09T08:57:12.022Z] [INFO] Comparing common column: selling_uom_name
+[2025-05-09T08:57:12.222Z] [INFO] Comparing common column: selling_uom_type
+[2025-05-09T08:57:12.327Z] [INFO] Found 1 common column mismatches
+[2025-05-09T08:57:12.328Z] [ERROR] 
+Value mismatches found:
+[2025-05-09T08:57:12.328Z] [INFO] Processing 3 total mismatches for display
+[2025-05-09T08:57:12.329Z] [INFO] Grouped mismatches by 22 unique SKU codes
+[2025-05-09T08:57:12.329Z] [INFO] 
+SKU Code: 11910003946 (1 differences)
+[
+  {
+    "column_name": "a_category1_name -> a3",
+    "column_type": "Attribute",
+    "old_value": "JI0823DE-16826333",
+    "new_value": "JI0823DE-16826"
+  }
+]
+[2025-05-09T08:57:12.330Z] [INFO] 
+SKU Code: 11910002053 (1 differences)
+[
+  {
+    "column_name": "cat_name_3 -> category_name3",
+    "column_type": "Category",
+    "old_value": "BEAD-JAPANI 15/0",
+    "new_value": "BEAD-JAPANI 12/0"
+  }
+]
+[2025-05-09T08:57:12.331Z] [INFO] 
+SKU Code: 11910002128 (1 differences)
+[
+  {
+    "column_name": "cat_name_3 -> category_name3",
+    "column_type": "Category",
+    "old_value": "BEAD-JAPANI 15/0",
+    "new_value": "BEAD-JAPANI 12/0"
+  }
+]
+[2025-05-09T08:57:12.331Z] [INFO] 
+SKU Code: 11910002130 (1 differences)
+[
+  {
+    "column_name": "cat_name_3 -> category_name3",
+    "column_type": "Category",
+    "old_value": "BEAD-JAPANI 15/0",
+    "new_value": "BEAD-JAPANI 12/0"
+  }
+]
+[2025-05-09T08:57:12.332Z] [INFO] 
+SKU Code: 11910002276 (1 differences)
+[
+  {
+    "column_name": "cat_name_3 -> category_name3",
+    "column_type": "Category",
+    "old_value": "BEAD-JAPANI 15/0",
+    "new_value": "BEAD-JAPANI 12/0"
+  }
+]
+[2025-05-09T08:57:12.332Z] [INFO] 
+SKU Code: 11910002110 (1 differences)
+[
+  {
+    "column_name": "cat_name_3 -> category_name3",
+    "column_type": "Category",
+    "old_value": "BEAD-JAPANI 15/0",
+    "new_value": "BEAD-JAPANI 12/0"
+  }
+]
+[2025-05-09T08:57:12.333Z] [INFO] 
+SKU Code: 11910002268 (1 differences)
+[
+  {
+    "column_name": "cat_name_3 -> category_name3",
+    "column_type": "Category",
+    "old_value": "BEAD-JAPANI 15/0",
+    "new_value": "BEAD-JAPANI 12/0"
+  }
+]
+[2025-05-09T08:57:12.333Z] [INFO] 
+SKU Code: 11910002148 (1 differences)
+[
+  {
+    "column_name": "cat_name_3 -> category_name3",
+    "column_type": "Category",
+    "old_value": "BEAD-JAPANI 15/0",
+    "new_value": "BEAD-JAPANI 12/0"
+  }
+]
+[2025-05-09T08:57:12.334Z] [INFO] 
+SKU Code: 11910002196 (1 differences)
+[
+  {
+    "column_name": "cat_name_3 -> category_name3",
+    "column_type": "Category",
+    "old_value": "BEAD-JAPANI 15/0",
+    "new_value": "BEAD-JAPANI 12/0"
+  }
+]
+[2025-05-09T08:57:12.335Z] [INFO] 
+SKU Code: 11910002228 (1 differences)
+[
+  {
+    "column_name": "cat_name_3 -> category_name3",
+    "column_type": "Category",
+    "old_value": "BEAD-JAPANI 15/0",
+    "new_value": "BEAD-JAPANI 12/0"
+  }
+]
+[2025-05-09T08:57:12.335Z] [INFO] 
+SKU Code: 11910002266 (1 differences)
+[
+  {
+    "column_name": "cat_name_3 -> category_name3",
+    "column_type": "Category",
+    "old_value": "BEAD-JAPANI 15/0",
+    "new_value": "BEAD-JAPANI 12/0"
+  }
+]
+[2025-05-09T08:57:12.335Z] [INFO] 
+SKU Code: 11910002111 (1 differences)
+[
+  {
+    "column_name": "cat_name_3 -> category_name3",
+    "column_type": "Category",
+    "old_value": "BEAD-JAPANI 15/0",
+    "new_value": "BEAD-JAPANI 12/0"
+  }
+]
+[2025-05-09T08:57:12.335Z] [INFO] 
+SKU Code: 11910002195 (1 differences)
+[
+  {
+    "column_name": "cat_name_3 -> category_name3",
+    "column_type": "Category",
+    "old_value": "BEAD-JAPANI 15/0",
+    "new_value": "BEAD-JAPANI 12/0"
+  }
+]
+[2025-05-09T08:57:12.335Z] [INFO] 
+SKU Code: 11910002115 (1 differences)
+[
+  {
+    "column_name": "cat_name_3 -> category_name3",
+    "column_type": "Category",
+    "old_value": "BEAD-JAPANI 15/0",
+    "new_value": "BEAD-JAPANI 12/0"
+  }
+]
+[2025-05-09T08:57:12.335Z] [INFO] 
+SKU Code: 11910002206 (1 differences)
+[
+  {
+    "column_name": "cat_name_3 -> category_name3",
+    "column_type": "Category",
+    "old_value": "BEAD-JAPANI 15/0",
+    "new_value": "BEAD-JAPANI 12/0"
+  }
+]
+[2025-05-09T08:57:12.336Z] [INFO] 
+SKU Code: 11910002233 (1 differences)
+[
+  {
+    "column_name": "cat_name_3 -> category_name3",
+    "column_type": "Category",
+    "old_value": "BEAD-JAPANI 15/0",
+    "new_value": "BEAD-JAPANI 12/0"
+  }
+]
+[2025-05-09T08:57:12.336Z] [INFO] 
+SKU Code: 11910002275 (1 differences)
+[
+  {
+    "column_name": "cat_name_3 -> category_name3",
+    "column_type": "Category",
+    "old_value": "BEAD-JAPANI 15/0",
+    "new_value": "BEAD-JAPANI 12/0"
+  }
+]
+[2025-05-09T08:57:12.336Z] [INFO] 
+SKU Code: 11910002066 (1 differences)
+[
+  {
+    "column_name": "cat_name_3 -> category_name3",
+    "column_type": "Category",
+    "old_value": "BEAD-JAPANI 15/0",
+    "new_value": "BEAD-JAPANI 12/0"
+  }
+]
+[2025-05-09T08:57:12.336Z] [INFO] 
+SKU Code: 11910002170 (1 differences)
+[
+  {
+    "column_name": "cat_name_3 -> category_name3",
+    "column_type": "Category",
+    "old_value": "BEAD-JAPANI 15/0",
+    "new_value": "BEAD-JAPANI 12/0"
+  }
+]
+[2025-05-09T08:57:12.336Z] [INFO] 
+SKU Code: 11910002197 (1 differences)
+[
+  {
+    "column_name": "cat_name_3 -> category_name3",
+    "column_type": "Category",
+    "old_value": "BEAD-JAPANI 15/0",
+    "new_value": "BEAD-JAPANI 12/0"
+  }
+]
+[2025-05-09T08:57:12.336Z] [INFO] 
+SKU Code: 11910000002 (1 differences)
+[
+  {
+    "column_name": "name",
+    "column_type": "Common",
+    "old_value": "ZARI FLORAL BORDER - Diff",
+    "new_value": "ZARI FLORAL BORDER"
+  }
+]
+[2025-05-09T08:57:12.336Z] [INFO] 
+SKU Code: 11910005343 (1 differences)
+[
+  {
+    "column_name": "name",
+    "column_type": "Common",
+    "old_value": "ELEPHANT 2",
+    "new_value": "ELEPHANT"
+  }
+]
+[2025-05-09T08:57:12.336Z] [INFO] Step 9: Closing database connection...
+[2025-05-09T08:57:12.381Z] [INFO] 
+Verifying database: ZW_MN_154_fazyo_in
+[2025-05-09T08:57:12.381Z] [INFO] Step 1: Connecting to database...
+[2025-05-09T08:57:12.742Z] [INFO] Step 2: Verifying attribute columns...
+[2025-05-09T08:57:12.743Z] [INFO] Getting columns from both flat tables...
+[2025-05-09T08:57:13.341Z] [INFO] Found 10333 columns in old table and 3614 columns in new table
+[2025-05-09T08:57:13.342Z] [INFO] Verifying attribute mappings...
+[2025-05-09T08:57:13.342Z] [INFO] Skipping ignored column: brand_name
+[2025-05-09T08:57:13.342Z] [INFO] Skipping ignored column: department_name
+[2025-05-09T08:57:13.345Z] [WARNING] Column a_udfdate05 missing in old table
+[2025-05-09T08:57:13.345Z] [INFO] Found 34 valid attribute mappings
+[2025-05-09T08:57:13.345Z] [INFO] Step 3: Verifying category columns...
+[2025-05-09T08:57:13.345Z] [INFO] Getting columns from both flat tables...
+[2025-05-09T08:57:13.603Z] [INFO] Found 10333 columns in old table and 3614 columns in new table
+[2025-05-09T08:57:13.604Z] [INFO] Verifying attribute mappings...
+[2025-05-09T08:57:13.604Z] [INFO] Found 4 valid category mappings
+[2025-05-09T08:57:13.604Z] [INFO] Step 4: Verifying common columns...
+[2025-05-09T08:57:13.604Z] [INFO] Getting columns from both flat tables...
+[2025-05-09T08:57:13.894Z] [INFO] Found 10333 columns in old table and 3614 columns in new table
+[2025-05-09T08:57:13.895Z] [INFO] Checking availability of common columns...
+[2025-05-09T08:57:13.895Z] [INFO] Found common column: name
+[2025-05-09T08:57:13.895Z] [INFO] Found common column: short_description
+[2025-05-09T08:57:13.895Z] [INFO] Found common column: long_description
+[2025-05-09T08:57:13.895Z] [INFO] Found common column: purchase_uom_name
+[2025-05-09T08:57:13.895Z] [INFO] Found common column: selling_uom_name
+[2025-05-09T08:57:13.895Z] [INFO] Found common column: uom_factor
+[2025-05-09T08:57:13.895Z] [INFO] Found common column: tax_type
+[2025-05-09T08:57:13.895Z] [INFO] Found common column: is_active
+[2025-05-09T08:57:13.895Z] [INFO] Found common column: ref_item_code
+[2025-05-09T08:57:13.895Z] [INFO] Found common column: sku_code
+[2025-05-09T08:57:13.895Z] [INFO] Found common column: ref_sku_code
+[2025-05-09T08:57:13.896Z] [INFO] Skipping ignored common column: sku
+[2025-05-09T08:57:13.896Z] [INFO] Found common column: purchase_uom_id
+[2025-05-09T08:57:13.896Z] [INFO] Found common column: purchase_uom_type
+[2025-05-09T08:57:13.896Z] [INFO] Found common column: selling_uom_id
+[2025-05-09T08:57:13.896Z] [INFO] Found common column: selling_uom_name
+[2025-05-09T08:57:13.896Z] [INFO] Found common column: selling_uom_type
+[2025-05-09T08:57:13.896Z] [INFO] Found 16 common columns to compare
+[2025-05-09T08:57:13.896Z] [WARNING] 
+Missing attribute columns detected:
+[2025-05-09T08:57:13.896Z] [WARNING] 
+Columns missing in old table (vendor_sku_flat_table):
+[
+  {
+    "mapping": "a37 -> a_udfdate05",
+    "missingColumn": "a_udfdate05"
+  }
+]
+[2025-05-09T08:57:13.896Z] [INFO] Step 5: Verifying SKU code matches...
+[2025-05-09T08:57:14.609Z] [INFO] Found 0 SKUs missing in new table and 13 SKUs missing in old table
+[2025-05-09T08:57:14.609Z] [ERROR] 
+SKU code mismatches found:
+[2025-05-09T08:57:14.609Z] [WARNING] 
+SKUs present in new table but missing in old table:
+[
+  {
+    "sku_code": "11407102605",
+    "name": "Womens T Shirt"
+  },
+  {
+    "sku_code": "11407102603",
+    "name": "Womens T Shirt"
+  },
+  {
+    "sku_code": "11407102734",
+    "name": "Womens Dresses"
+  },
+  {
+    "sku_code": "11407102609",
+    "name": "Womens T Shirt"
+  },
+  {
+    "sku_code": "11407102740",
+    "name": "Womens Dresses"
+  },
+  {
+    "sku_code": "11407102607",
+    "name": "Womens T Shirt"
+  },
+  {
+    "sku_code": "11407102611",
+    "name": "Womens T Shirt"
+  },
+  {
+    "sku_code": "11407102742",
+    "name": "Womens Dresses"
+  },
+  {
+    "sku_code": "11407102613",
+    "name": "Womens T Shirt"
+  },
+  {
+    "sku_code": "11407102736",
+    "name": "Womens Dresses"
+  },
+  {
+    "sku_code": "11407102599",
+    "name": "Womens T Shirt"
+  },
+  {
+    "sku_code": "11407102738",
+    "name": "Womens Dresses"
+  },
+  {
+    "sku_code": "11407102597",
+    "name": "Womens T Shirt"
+  }
+]
+[2025-05-09T08:57:14.611Z] [INFO] Step 6: Comparing attribute values...
+[2025-05-09T08:57:14.611Z] [INFO] Comparing 34 attribute mappings...
+[2025-05-09T08:57:14.611Z] [INFO] Comparing attribute mapping: a_category1_name -> a3
+[2025-05-09T08:57:15.376Z] [INFO] Found 1 mismatches for a_category1_name -> a3
+[2025-05-09T08:57:15.376Z] [INFO] Comparing attribute mapping: a_category2_name -> a4
+[2025-05-09T08:57:15.984Z] [INFO] Comparing attribute mapping: a_category3_name -> a5
+[2025-05-09T08:57:16.579Z] [INFO] Comparing attribute mapping: a_category4_name -> a6
+[2025-05-09T08:57:17.181Z] [INFO] Comparing attribute mapping: a_category5_name -> a7
+[2025-05-09T08:57:17.780Z] [INFO] Comparing attribute mapping: a_category6_name -> a8
+[2025-05-09T08:57:18.520Z] [INFO] Comparing attribute mapping: a_description1 -> a9
+[2025-05-09T08:57:19.115Z] [INFO] Comparing attribute mapping: a_description2 -> a10
+[2025-05-09T08:57:19.761Z] [INFO] Comparing attribute mapping: a_description3 -> a11
+[2025-05-09T08:57:20.414Z] [INFO] Comparing attribute mapping: a_description4 -> a12
+[2025-05-09T08:57:21.141Z] [INFO] Comparing attribute mapping: a_description5 -> a13
+[2025-05-09T08:57:21.763Z] [INFO] Comparing attribute mapping: a_description6 -> a14
+[2025-05-09T08:57:22.387Z] [INFO] Comparing attribute mapping: a_number1 -> a15
+[2025-05-09T08:57:22.444Z] [WARNING] Error comparing a_number1 -> a15: Unknown column 'o.a_number1' in 'field list'
+[2025-05-09T08:57:22.444Z] [INFO] Comparing attribute mapping: a_number2 -> a16
+[2025-05-09T08:57:22.497Z] [WARNING] Error comparing a_number2 -> a16: Unknown column 'o.a_number2' in 'field list'
+[2025-05-09T08:57:22.497Z] [INFO] Comparing attribute mapping: a_number3 -> a17
+[2025-05-09T08:57:22.704Z] [WARNING] Error comparing a_number3 -> a17: Unknown column 'o.a_number3' in 'field list'
+[2025-05-09T08:57:22.705Z] [INFO] Comparing attribute mapping: a_udfstring01 -> a18
+[2025-05-09T08:57:22.764Z] [WARNING] Error comparing a_udfstring01 -> a18: Unknown column 'o.a_udfstring01' in 'field list'
+[2025-05-09T08:57:22.764Z] [INFO] Comparing attribute mapping: a_udfstring02 -> a19
+[2025-05-09T08:57:23.395Z] [INFO] Comparing attribute mapping: a_udfstring03 -> a20
+[2025-05-09T08:57:24.029Z] [INFO] Comparing attribute mapping: a_udfstring04 -> a21
+[2025-05-09T08:57:24.821Z] [INFO] Comparing attribute mapping: a_udfstring05 -> a22
+[2025-05-09T08:57:25.461Z] [INFO] Comparing attribute mapping: a_udfstring06 -> a23
+[2025-05-09T08:57:26.135Z] [INFO] Comparing attribute mapping: a_udfstring07 -> a24
+[2025-05-09T08:57:26.187Z] [WARNING] Error comparing a_udfstring07 -> a24: Unknown column 'o.a_udfstring07' in 'field list'
+[2025-05-09T08:57:26.187Z] [INFO] Comparing attribute mapping: a_udfstring08 -> a25
+[2025-05-09T08:57:26.373Z] [WARNING] Error comparing a_udfstring08 -> a25: Unknown column 'o.a_udfstring08' in 'field list'
+[2025-05-09T08:57:26.374Z] [INFO] Comparing attribute mapping: a_udfstring09 -> a26
+[2025-05-09T08:57:26.428Z] [WARNING] Error comparing a_udfstring09 -> a26: Unknown column 'o.a_udfstring09' in 'field list'
+[2025-05-09T08:57:26.428Z] [INFO] Comparing attribute mapping: a_udfstring10 -> a27
+[2025-05-09T08:57:26.480Z] [WARNING] Error comparing a_udfstring10 -> a27: Unknown column 'o.a_udfstring10' in 'field list'
+[2025-05-09T08:57:26.481Z] [INFO] Comparing attribute mapping: a_udfnum01 -> a28
+[2025-05-09T08:57:26.533Z] [WARNING] Error comparing a_udfnum01 -> a28: Unknown column 'o.a_udfnum01' in 'field list'
+[2025-05-09T08:57:26.533Z] [INFO] Comparing attribute mapping: a_udfnum02 -> a29
+[2025-05-09T08:57:26.588Z] [WARNING] Error comparing a_udfnum02 -> a29: Unknown column 'o.a_udfnum02' in 'field list'
+[2025-05-09T08:57:26.588Z] [INFO] Comparing attribute mapping: a_udfnum03 -> a30
+[2025-05-09T08:57:26.642Z] [WARNING] Error comparing a_udfnum03 -> a30: Unknown column 'o.a_udfnum03' in 'field list'
+[2025-05-09T08:57:26.642Z] [INFO] Comparing attribute mapping: a_udfnum04 -> a31
+[2025-05-09T08:57:26.701Z] [WARNING] Error comparing a_udfnum04 -> a31: Unknown column 'o.a_udfnum04' in 'field list'
+[2025-05-09T08:57:26.701Z] [INFO] Comparing attribute mapping: a_udfnum05 -> a32
+[2025-05-09T08:57:26.910Z] [WARNING] Error comparing a_udfnum05 -> a32: Unknown column 'o.a_udfnum05' in 'field list'
+[2025-05-09T08:57:26.910Z] [INFO] Comparing attribute mapping: a_udfdate01 -> a33
+[2025-05-09T08:57:27.541Z] [INFO] Comparing attribute mapping: a_udfdate02 -> a34
+[2025-05-09T08:57:27.609Z] [WARNING] Error comparing a_udfdate02 -> a34: Unknown column 'o.a_udfdate02' in 'field list'
+[2025-05-09T08:57:27.609Z] [INFO] Comparing attribute mapping: a_udfdate03 -> a35
+[2025-05-09T08:57:27.664Z] [WARNING] Error comparing a_udfdate03 -> a35: Unknown column 'o.a_udfdate03' in 'field list'
+[2025-05-09T08:57:27.664Z] [INFO] Comparing attribute mapping: a_udfdate04 -> a36
+[2025-05-09T08:57:27.717Z] [WARNING] Error comparing a_udfdate04 -> a36: Unknown column 'o.a_udfdate04' in 'field list'
+[2025-05-09T08:57:27.717Z] [INFO] Found 1 attribute mismatches
+[2025-05-09T08:57:27.717Z] [INFO] Step 7: Comparing category values...
+[2025-05-09T08:57:27.717Z] [INFO] Comparing 4 category mappings...
+[2025-05-09T08:57:27.718Z] [INFO] Comparing category mapping: cat_name_1 -> category_name1
+[2025-05-09T08:57:28.471Z] [INFO] Comparing category mapping: cat_name_2 -> category_name2
+[2025-05-09T08:57:29.136Z] [INFO] Comparing category mapping: cat_name_3 -> category_name3
+[2025-05-09T08:57:29.806Z] [INFO] Found 1 mismatches for category cat_name_3 -> category_name3
+[2025-05-09T08:57:29.807Z] [INFO] Comparing category mapping: cat_name_4 -> category_name4
+[2025-05-09T08:57:30.588Z] [INFO] Found 1 mismatches for category cat_name_4 -> category_name4
+[2025-05-09T08:57:30.589Z] [INFO] Found 2 category mismatches
+[2025-05-09T08:57:30.589Z] [INFO] Step 8: Comparing common columns...
+[2025-05-09T08:57:30.589Z] [INFO] Comparing 16 common columns...
+[2025-05-09T08:57:30.589Z] [INFO] Comparing common column: name
+[2025-05-09T08:57:31.153Z] [INFO] Found 1 mismatches for column name
+[2025-05-09T08:57:31.153Z] [INFO] Comparing common column: short_description
+[2025-05-09T08:57:31.767Z] [INFO] Found 1 mismatches for column short_description
+[2025-05-09T08:57:31.768Z] [INFO] Comparing common column: long_description
+[2025-05-09T08:57:32.267Z] [INFO] Found 1 mismatches for column long_description
+[2025-05-09T08:57:32.267Z] [INFO] Comparing common column: purchase_uom_name
+[2025-05-09T08:57:32.798Z] [INFO] Comparing common column: selling_uom_name
+[2025-05-09T08:57:33.405Z] [INFO] Comparing common column: uom_factor
+[2025-05-09T08:57:33.943Z] [INFO] Comparing common column: tax_type
+[2025-05-09T08:57:34.503Z] [INFO] Comparing common column: is_active
+[2025-05-09T08:57:35.061Z] [INFO] Comparing common column: ref_item_code
+[2025-05-09T08:57:35.564Z] [INFO] Found 1 mismatches for column ref_item_code
+[2025-05-09T08:57:35.565Z] [INFO] Comparing common column: sku_code
+[2025-05-09T08:57:35.847Z] [INFO] Comparing common column: ref_sku_code
+[2025-05-09T08:57:36.378Z] [INFO] Found 1 mismatches for column ref_sku_code
+[2025-05-09T08:57:36.378Z] [INFO] Comparing common column: purchase_uom_id
+[2025-05-09T08:57:36.910Z] [INFO] Comparing common column: purchase_uom_type
+[2025-05-09T08:57:37.500Z] [INFO] Comparing common column: selling_uom_id
+[2025-05-09T08:57:38.045Z] [INFO] Comparing common column: selling_uom_name
+[2025-05-09T08:57:38.730Z] [INFO] Comparing common column: selling_uom_type
+[2025-05-09T08:57:39.551Z] [INFO] Found 5 common column mismatches
+[2025-05-09T08:57:39.551Z] [ERROR] 
+Value mismatches found:
+[2025-05-09T08:57:39.552Z] [INFO] Processing 8 total mismatches for display
+[2025-05-09T08:57:39.552Z] [INFO] Grouped mismatches by 3 unique SKU codes
+[2025-05-09T08:57:39.552Z] [INFO] 
+SKU Code: 11407105584 (6 differences)
+[
+  {
+    "column_name": "a_category1_name -> a3",
+    "column_type": "Attribute",
+    "old_value": "Fazyo",
+    "new_value": "Fazyo - changed"
+  },
+  {
+    "column_name": "name",
+    "column_type": "Common",
+    "old_value": "Girls T Shirt",
+    "new_value": "Girls T Shirt. - changed"
+  },
+  {
+    "column_name": "short_description",
+    "column_type": "Common",
+    "old_value": "null",
+    "new_value": "this"
+  },
+  {
+    "column_name": "long_description",
+    "column_type": "Common",
+    "old_value": "null",
+    "new_value": "this"
+  },
+  {
+    "column_name": "ref_item_code",
+    "column_type": "Common",
+    "old_value": "K8745043",
+    "new_value": "K8745043111"
+  },
+  {
+    "column_name": "ref_sku_code",
+    "column_type": "Common",
+    "old_value": "K8745043",
+    "new_value": "K8745043111"
+  }
+]
+[2025-05-09T08:57:39.553Z] [INFO] 
+SKU Code: 11407000001 (1 differences)
+[
+  {
+    "column_name": "cat_name_3 -> category_name3",
+    "column_type": "Category",
+    "old_value": "Shirt - chnaged",
+    "new_value": "Shirt"
+  }
+]
+[2025-05-09T08:57:39.554Z] [INFO] 
+SKU Code: 11407049930 (1 differences)
+[
+  {
+    "column_name": "cat_name_4 -> category_name4",
+    "column_type": "Category",
+    "old_value": "Gents Wear-Gents Readymades-Shorts-Fazyo-12803Z",
+    "new_value": "null"
+  }
+]
+[2025-05-09T08:57:39.554Z] [INFO] Step 9: Closing database connection...
+[2025-05-09T08:57:39.558Z] [INFO] 
+Verification process completed.
+[2025-05-09T08:57:39.558Z] [INFO] Reports generated in: /Users/rishabhshukla/rishabh-project/item-verification-app-v2/reports/2025-05-09T08-57-00-324Z
+[2025-05-09T08:57:39.558Z] [INFO] Open /Users/rishabhshukla/rishabh-project/item-verification-app-v2/reports/2025-05-09T08-57-00-324Z/index.html to view the summary.

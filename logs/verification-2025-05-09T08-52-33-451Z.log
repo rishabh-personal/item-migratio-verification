@@ -1,0 +1,6 @@
+[2025-05-09T08:52:33.455Z] [ERROR] Error loading attribute mappings:
+Error: ENOENT: no such file or directory, open '/Users/rishabhshukla/rishabh-project/item-verification-app-v2/schemas/mappings'
+    at async open (node:internal/fs/promises:634:25)
+    at async Object.readFile (node:internal/fs/promises:1238:14)
+    at async loadAttributeMappings (file:///Users/rishabhshukla/rishabh-project/item-verification-app-v2/src/index.js:59:28)
+    at async main (file:///Users/rishabhshukla/rishabh-project/item-verification-app-v2/src/index.js:550:31)
