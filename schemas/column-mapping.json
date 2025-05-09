@@ -1,0 +1,96 @@
+{
+  "common_columns": {
+    "id": {
+      "old_type": "int",
+      "new_type": "int"
+    },
+    "name": {
+      "old_type": "varchar(255)",
+      "new_type": "varchar(255)"
+    },
+    "vendor_sku_detail_id": {
+      "old_type": "int",
+      "new_type": "int"
+    },
+    "ref_item_code": {
+      "old_type": "varchar(255)",
+      "new_type": "varchar(255)"
+    },
+    "sku_code": {
+      "old_type": "bigint unsigned",
+      "new_type": "varchar(255)"
+    },
+    "ref_sku_code": {
+      "old_type": "varchar(255)",
+      "new_type": "varchar(255)"
+    },
+    "sku": {
+      "old_type": "varchar(255)",
+      "new_type": "varchar(255)"
+    },
+    "short_description": {
+      "old_type": "varchar(255)",
+      "new_type": "varchar(255)"
+    },
+    "long_description": {
+      "old_type": "text",
+      "new_type": "text"
+    },
+    "purchase_uom_id": {
+      "old_type": "int",
+      "new_type": "int"
+    },
+    "purchase_uom_name": {
+      "old_type": "varchar(255)",
+      "new_type": "varchar(255)"
+    },
+    "purchase_uom_type": {
+      "old_type": "varchar(255)",
+      "new_type": "varchar(255)"
+    },
+    "selling_uom_id": {
+      "old_type": "int",
+      "new_type": "int"
+    },
+    "selling_uom_name": {
+      "old_type": "varchar(255)",
+      "new_type": "varchar(255)"
+    },
+    "selling_uom_type": {
+      "old_type": "varchar(255)",
+      "new_type": "varchar(255)"
+    },
+    "uom_factor": {
+      "old_type": "double",
+      "new_type": "double"
+    },
+    "uom_conversion_id": {
+      "old_type": "int",
+      "new_type": "int"
+    },
+    "tax_type": {
+      "old_type": "enum('INC','EXC')",
+      "new_type": "enum('INC','EXC')"
+    },
+    "tax_group_id": {
+      "old_type": "int",
+      "new_type": "int"
+    },
+    "is_active": {
+      "old_type": "enum('0','1')",
+      "new_type": "enum('0','1')"
+    },
+    "created_at": {
+      "old_type": "datetime",
+      "new_type": "datetime"
+    },
+    "updated_at": {
+      "old_type": "datetime",
+      "new_type": "datetime"
+    },
+    "deleted_at": {
+      "old_type": "datetime",
+      "new_type": "timestamp"
+    }
+  }
+} 
