@@ -37,6 +37,10 @@ class ReportGenerator {
         oldTable: results.missingCommonColumns?.oldTable?.length || 0,
         newTable: results.missingCommonColumns?.newTable?.length || 0
       },
+      missingPriceColumns: {
+        oldTable: results.missingPriceColumns?.oldTable?.length || 0,
+        newTable: results.missingPriceColumns?.newTable?.length || 0
+      },
       skuMismatches: {
         missingInNew: results.skuMismatches?.missingInNew?.length || 0,
         missingInOld: results.skuMismatches?.missingInOld?.length || 0
@@ -44,7 +48,13 @@ class ReportGenerator {
       valueMismatches: {
         attributes: results.attributeMismatches?.length || 0,
         categories: results.categoryMismatches?.length || 0,
-        commonColumns: results.commonColumnMismatches?.length || 0
+        commonColumns: results.commonColumnMismatches?.length || 0,
+        prices: results.priceMismatches?.mismatches?.length || 0
+      },
+      priceMismatches: {
+        missingInNew: results.priceMismatches?.missing?.missingInNew?.length || 0,
+        missingInOld: results.priceMismatches?.missing?.missingInOld?.length || 0,
+        differences: results.priceMismatches?.mismatches?.length || 0
       }
     };
 
@@ -140,6 +150,39 @@ class ReportGenerator {
     `;
   }
 
+  generatePriceMismatchTableHTML(mismatches) {
+    if (!mismatches || !mismatches.mismatches || mismatches.mismatches.length === 0) {
+      return '<p>No price mismatches found</p>';
+    }
+
+    return `
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>SKU Code</th>
+            <th>Price Book ID</th>
+            <th>Price Type</th>
+            <th>Old Value</th>
+            <th>New Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${mismatches.mismatches.map(mismatch => 
+            mismatch.differences.map((diff, index) => `
+              ${index === 0 ? `<tr>
+                <td rowspan="${mismatch.differences.length}">${mismatch.sku_code}</td>
+                <td rowspan="${mismatch.differences.length}">${mismatch.price_book_id}</td>` : '<tr>'}
+                <td><span class="badge bg-info">${diff.field.toUpperCase()}</span></td>
+                <td class="text-danger">${diff.old_value || '<em>null</em>'}</td>
+                <td class="text-success">${diff.new_value || '<em>null</em>'}</td>
+              </tr>`
+            ).join('')
+          ).join('')}
+        </tbody>
+      </table>
+    `;
+  }
+
   async generateDatabaseReport(dbName, results) {
     const summary = this.generateMismatchSummary(dbName, results);
     const reportPath = join(this.reportsDir, this.timestamp, `${dbName}.html`);
@@ -178,12 +221,14 @@ class ReportGenerator {
                       <li class="list-group-item">Old Table: 
                         ${summary.missingAttributeColumns.oldTable} attribute(s), 
                         ${summary.missingCategoryColumns.oldTable} category(ies), 
-                        ${summary.missingCommonColumns.oldTable} common column(s)
+                        ${summary.missingCommonColumns.oldTable} common column(s),
+                        ${summary.missingPriceColumns.oldTable} price column(s)
                       </li>
                       <li class="list-group-item">New Table: 
                         ${summary.missingAttributeColumns.newTable} attribute(s), 
                         ${summary.missingCategoryColumns.newTable} category(ies), 
-                        ${summary.missingCommonColumns.newTable} common column(s)
+                        ${summary.missingCommonColumns.newTable} common column(s),
+                        ${summary.missingPriceColumns.newTable} price column(s)
                       </li>
                     </ul>
                   </div>
@@ -199,8 +244,12 @@ class ReportGenerator {
                       <li class="list-group-item">Total value mismatches: ${
                         summary.valueMismatches.attributes + 
                         summary.valueMismatches.categories + 
-                        summary.valueMismatches.commonColumns
+                        summary.valueMismatches.commonColumns +
+                        summary.valueMismatches.prices
                       }</li>
+                      <li class="list-group-item">Price mismatches: ${summary.priceMismatches.differences} 
+                        (${summary.priceMismatches.missingInNew} missing in new, 
+                        ${summary.priceMismatches.missingInOld} missing in old)</li>
                     </ul>
                   </div>
                 </div>
@@ -250,6 +299,20 @@ class ReportGenerator {
             </div>
           ` : ''}
 
+          ${results.missingPriceColumns?.oldTable?.length || results.missingPriceColumns?.newTable?.length ? `
+            <div class="section">
+              <h2>Missing Price Columns</h2>
+              ${results.missingPriceColumns.oldTable?.length ? `
+                <h4>Old Table (vendor_item_price_mapping)</h4>
+                ${this.generateTableHTML(results.missingPriceColumns.oldTable.map(col => ({ column: col })))}
+              ` : ''}
+              ${results.missingPriceColumns.newTable?.length ? `
+                <h4>New Table (im_sku_price_mapping)</h4>
+                ${this.generateTableHTML(results.missingPriceColumns.newTable.map(col => ({ column: col })))}
+              ` : ''}
+            </div>
+          ` : ''}
+
           ${results.skuMismatches?.missingInNew?.length || results.skuMismatches?.missingInOld?.length ? `
             <div class="section">
               <h2>SKU Mismatches</h2>
@@ -275,6 +338,32 @@ class ReportGenerator {
                 ...(results.categoryMismatches?.map(m => ({ ...m, type: 'category' })) || []),
                 ...(results.commonColumnMismatches?.map(m => ({ ...m, type: 'common' })) || [])
               ])}
+            </div>
+          ` : ''}
+
+          ${results.priceMismatches?.mismatches?.length || 
+            results.priceMismatches?.missing?.missingInNew?.length || 
+            results.priceMismatches?.missing?.missingInOld?.length ? `
+            <div class="section">
+              <h2>Price Mismatches</h2>
+              <div class="alert alert-info">
+                <strong>Note:</strong> Values are color-coded - <span class="text-danger">red for old values</span> and <span class="text-success">green for new values</span>. <em>null</em> indicates missing values.
+              </div>
+
+              ${results.priceMismatches.mismatches?.length ? `
+                <h4>Price Value Mismatches</h4>
+                ${this.generatePriceMismatchTableHTML(results.priceMismatches)}
+              ` : ''}
+
+              ${results.priceMismatches.missing?.missingInNew?.length ? `
+                <h4>Prices Missing in New Table</h4>
+                ${this.generateTableHTML(results.priceMismatches.missing.missingInNew)}
+              ` : ''}
+
+              ${results.priceMismatches.missing?.missingInOld?.length ? `
+                <h4>Prices Missing in Old Table</h4>
+                ${this.generateTableHTML(results.priceMismatches.missing.missingInOld)}
+              ` : ''}
             </div>
           ` : ''}
         </div>

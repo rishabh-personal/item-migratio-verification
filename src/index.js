@@ -5,6 +5,7 @@ import { dirname, join } from 'path';
 import fs from 'fs/promises';
 import logger from './logger.js';
 import ReportGenerator from './reportGenerator.js';
+import { verifyPriceColumns, comparePrices } from './priceComparison.js';
 
 // Get the directory path of the current module
 const __filename = fileURLToPath(import.meta.url);
@@ -363,12 +364,14 @@ async function verifyDatabase(dbName, attributeMappings, categoryMappings) {
   
   const results = {
     missingAttributeColumns: null,
-    missingCommonColumns: null,
     missingCategoryColumns: null,
+    missingCommonColumns: null,
+    missingPriceColumns: null,
     skuMismatches: null,
     attributeMismatches: null,
     categoryMismatches: null,
-    commonColumnMismatches: null
+    commonColumnMismatches: null,
+    priceMismatches: null
   };
   
   try {
@@ -520,10 +523,28 @@ async function verifyDatabase(dbName, attributeMappings, categoryMappings) {
         logger.table(differences);
       }
     }
+
+    // Add price verification steps
+    logger.info('Step 9: Verifying price columns...');
+    const missingPriceColumns = await verifyPriceColumns(connection);
+    results.missingPriceColumns = missingPriceColumns;
+    logger.info(`Found ${missingPriceColumns.oldTable.length} missing columns in old price table and ${missingPriceColumns.newTable.length} in new price table`);
+
+    if (missingPriceColumns.oldTable.length === 0 && missingPriceColumns.newTable.length === 0) {
+      logger.info('Step 10: Comparing prices...');
+      const priceComparison = await comparePrices(connection);
+      results.priceMismatches = priceComparison;
+      logger.info(`Found ${priceComparison.mismatches.length} price mismatches`);
+      logger.info(`Found ${priceComparison.missing.missingInNew.length} prices missing in new table`);
+      logger.info(`Found ${priceComparison.missing.missingInOld.length} prices missing in old table`);
+    } else {
+      logger.warning('Skipping price comparison due to missing required columns');
+    }
+
   } catch (error) {
     logger.error(`Error verifying database ${dbName}:`, error);
   } finally {
-    logger.info('Step 9: Closing database connection...');
+    logger.info('Step 11: Closing database connection...');
     await connection.end();
   }
   
